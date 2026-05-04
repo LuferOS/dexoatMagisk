@@ -1,80 +1,53 @@
-# 🚀 Android App Optimizer (Speed Profile)
-> *Módulo para Magisk & KernelSU*
-
-![Magisk](https://img.shields.io/badge/Magisk-Module-green?style=for-the-badge&logo=android)
-![KernelSU](https://img.shields.io/badge/KernelSU-Supported-blue?style=for-the-badge&logo=linux)
-![Author](https://img.shields.io/badge/Dev-LuferOS-orange?style=for-the-badge&logo=github)
-
-¡Bienvenido! Este módulo está diseñado para darle un "empujón" de rendimiento a tus aplicaciones instaladas forzando una recompilación inteligente del sistema tras la instalación.
-
+# 🚀 DEX2OAT OPTIMIZATION BOOST (LuferOS)
+<div align="center">
+[![Downloads](https://img.shields.io/github/downloads/LuferOS/dexopt-boost-magisk/total?style=for-the-badge&color=cyan&logo=github)](https://github.com/LuferOS/dexopt-boost-magisk/releases)
+[![Stars](https://img.shields.io/github/stars/LuferOS/dexopt-boost-magisk?style=for-the-badge&color=yellow&logo=github)](https://github.com/LuferOS/dexopt-boost-magisk/stargazers)
+[![Release](https://img.shields.io/github/v/release/LuferOS/dexopt-boost-magisk?style=for-the-badge&color=blue&logo=android)](https://github.com/LuferOS/dexopt-boost-magisk/releases)
+[![Magisk](https://img.shields.io/badge/Magisk-v20.4+-00AF9C?style=for-the-badge&logo=magisk)](https://github.com/topjohnwu/Magisk)
+[![KernelSU](https://img.shields.io/badge/KernelSU-Compatible-blueviolet?style=for-the-badge&logo=linux)](https://github.com/tiann/KernelSU)
+**Inyección de rendimiento AOT a nivel Kernel. Cero Lag. Máxima eficiencia térmica.**
+<br>
+Desarrollado por [LuferOS](https://github.com/LuferOS)
+</div>
 ---
-
-## 🧐 ¿Cómo funciona?
-
-Este módulo actúa como un disparador de optimización post-arranque. Aquí está la magia bajo el capó:
-
-1.  **⚡ Acción Principal:** Ejecuta un script (`service.sh`) **una única vez** tras el primer reinicio después de instalar el módulo.
-2.  **🛠 Recompilación Forzada:** Ordena al sistema Android (vía `cmd package compile`) que recompile todas las aplicaciones de usuario (Terceros).
-3.  **🧠 Filtro Inteligente (`speed-profile`):**
-    * No compila todo "a lo bruto". Utiliza el perfil `speed-profile`.
-    * **El equilibrio perfecto:** Optimiza las partes más usadas del código basándose en cómo usas tu móvil, mejorando la velocidad sin devorar tu almacenamiento.
-4.  **🛑 Ejecución Única (Zero Lag):** Para no ralentizar tus siguientes arranques, el script crea un archivo testigo (`.ran_once`). Si el sistema ve este archivo, el script **no hace nada**, asegurando que tu inicio sea rápido siempre.
-
+## 🧐 ¿Qué hace esta bestia?
+**Dex2OAT Optimization Boost** no es el típico script destructivo que compila todo a lo bruto y deja tu dispositivo congelado. Este módulo actúa como un disparador inteligente de optimización post-arranque.
+Fuerza al motor ART de Android a recompilar todas las aplicaciones de terceros utilizando el filtro **`speed-profile`**.
+* **El equilibrio perfecto:** Solo optimiza las partes del código que realmente usas con frecuencia.
+* **Resultado:** Aperturas de apps mucho más rápidas y animaciones más fluidas, sin devorar tu almacenamiento interno.
+## 🚀 Arquitectura de Cero Lag (Novedades v2.0)
+A diferencia de otros módulos, hemos blindado la ejecución para que ni te des cuenta de que está corriendo:
+1.  **🛡️ Control I/O Estricto (`ionice -c 3`):** El proceso solo lee y escribe en la memoria cuando ninguna otra aplicación la está usando. Tu almacenamiento no se asfixiará.
+2.  **🧠 Prioridad de CPU Idle (`chrt -i 0` + `nice -n 19`):** El compilador cede el paso a cualquier otra tarea del sistema. Cero congelamientos (lag) mientras usas el móvil.
+3.  **🔋 Failover de Batería:** El script audita el nivel de energía (`dumpsys battery`). Si tienes menos del 25%, la optimización se aborta automáticamente para proteger tu autonomía.
+4.  **🛑 Ejecución Única Quirúrgica:** Crea un marcador (`.ran_once`) para ejecutarse una sola vez tras la instalación. Tus futuros arranques seguirán siendo instantáneos.
 ---
-
-## 📲 Instalación
-
-¡Es súper sencillo! Sigue estos pasos:
-
-1.  **Descarga** el archivo `.zip` del módulo.
-2.  Abre tu gestor favorito: **Magisk Manager** o **KernelSU**.
+## 📲 Guía de Instalación
+1.  **Descarga** el archivo `.zip` más reciente desde la sección de [Releases](https://github.com/LuferOS/dexopt-boost-magisk/releases).
+2.  Abre **Magisk Manager** o **KernelSU Manager**.
 3.  Ve a la pestaña de **Módulos**.
-4.  Toca en **"Instalar desde almacenamiento"** y selecciona el archivo.
+4.  Toca en **"Instalar desde almacenamiento"** y flashea el archivo.
 5.  **Reinicia tu dispositivo**.
-    * *Nota:* Tras arrancar, espera unos **60 segundos** adicionales. El módulo trabaja en segundo plano para asegurar estabilidad antes de empezar a compilar.
-
+    * *Nota:* El script esperará pacientemente a que el sistema arranque por completo (`sys.boot_completed`) y pausará otros 60 segundos antes de comenzar la optimización en segundo plano.
 ---
-
-## 📋 Requisitos y Compatibilidad
+## 📋 Requisitos del Sistema
 
 | Requisito | Detalle |
 | :--- | :--- |
-| **Root Manager** | Magisk o KernelSU (versiones recientes recomendadas). |
-| **Android** | Android 7 (Nougat) en adelante. |
-| **Recomendado** | Funciona mejor y más consistentemente en **Android 9 (Pie) o superior**. |
+| **Root Manager** | Magisk o KernelSU/APatch. |
+| **Android** | Android 9 (Pie) en adelante (Soporte nativo óptimo para perfiles ART). |
+| **Batería** | Mínimo 25% de carga requerida para la primera ejecución. |
 
 ---
-
-## ⚠️ ¿Cuándo NO instalar este módulo?
-
-Sé responsable con tu dispositivo. **Evita instalarlo si:**
-
-* ❌ **No tienes Root:** Obvio, pero necesario recordar. Requiere acceso privilegiado.
-* ❌ **Tienes poco espacio:** Aunque `speed-profile` es eficiente, compilar apps ocupa algo más de espacio que el código interpretado. Si estás al límite de almacenamiento, ten cuidado.
-* ❌ **Tu móvil ya es inestable:** Si sufres de *bootloops* o reinicios aleatorios, no añadas más carga al sistema.
-* ❌ **ROMs muy modificadas:** Algunas Custom ROMs ya traen sus propios scripts de `dexopt`. Esto podría causar conflictos.
-* ❌ **Miedo al riesgo:** Siempre existe una mínima posibilidad de *bootloop* o consumo alto de batería temporal mientras se compila. **¡Haz siempre un Backup antes!**
-
-> **Nota:** Android tiene su propio sistema de optimización en segundo plano (cuando el móvil carga de noche). Este módulo solo *fuerza* ese proceso inmediatamente para usuarios que quieren rendimiento *ya*.
-
+## ⚠️ ¿Cuándo NO deberías instalar esto?
+Este módulo es una herramienta de *power user*. **Evítalo si:**
+* ❌ **Tienes almacenamiento crítico:** `speed-profile` es eficiente, pero la compilación AOT siempre ocupará más espacio que el código interpretado (JIT).
+* ❌ **Usas ROMs fuertemente modificadas:** Si tu Custom ROM ya tiene gestores agresivos de `dexopt` integrados, podrías generar conflictos.
+* ❌ **Tu batería está degradada:** El proceso inicial de compilación es exigente para el SoC.
+> **💡 Tip Técnico:** Android optimiza aplicaciones de forma nativa mientras el móvil carga y está inactivo por la noche. Este módulo está diseñado para los entusiastas que quieren forzar ese rendimiento de inmediato tras flashear o instalar lotes grandes de apps.
 ---
-
-## 🤝 Colaboración
-
-¡Este proyecto es de código abierto y la comunidad es bienvenida!
-Si tienes ideas para mejorar el script, nuevos filtros de compilación o correcciones:
-
-1.  Haz un **Fork** del repositorio.
-2.  Crea tu rama de características (`git checkout -b feature/AmazingFeature`).
-3.  Haz tus cambios y **Commit** (`git commit -m 'Add some AmazingFeature'`).
-4.  Sube tus cambios (`git push origin feature/AmazingFeature`).
-5.  Abre un **Pull Request**.
-
----
-
-<div align="center">
-
-### Desarrollado con ❤️ por [LuferOS](https://github.com/LuferOS)
-*Si te sirvió, ¡no olvides dejar una estrella ⭐ en el repo!*
-
-</div>
+## 🛠️ Verificación y Logs
+¿Quieres ver cómo el motor compila tus apps en tiempo real?
+Abre Termux (o cualquier terminal con root) y ejecuta:
+```bash
+tail -f /data/local/tmp/luferos_optimizer.log
