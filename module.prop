@@ -1,6 +1,6 @@
-id=dexopt-boost
-name=Dex2OAT Optimization Boost
-version=0.1Beta
-versionCode=1
-author=Lufer142006(LUFEROS)
-description=Forza la recompilación AOT de ART (dex2oat) con filtro 'speed-profile' para apps de usuario tras el primer arranque. Optimización experimental. Usar con precaución.
+id=luferos_dexopt_boost
+name=Dex2OAT Optimization Boost (LuferOS)
+version=v2.0-Stable
+versionCode=2
+author=LuferOS
+description=Fuerza la recompilación AOT (speed-profile) con control térmico, ionice y nice. Optimiza apps de terceros tras el primer arranque sin causar lag en el sistema.
