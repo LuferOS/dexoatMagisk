@@ -2,21 +2,14 @@
 
 <div align="center">
 
-<img src="https://img.shields.io/badge/Versión-v2.0_Stable-blue?style=for-the-badge&logo=android" alt="Version" />
-<a href="https://github.com/topjohnwu/Magisk">
-  <img src="https://img.shields.io/badge/Magisk-v20.4+-00AF9C?style=for-the-badge&logo=magisk" alt="Magisk" />
-</a>
-<a href="https://github.com/tiann/KernelSU">
-  <img src="https://img.shields.io/badge/KernelSU-Compatible-blueviolet?style=for-the-badge&logo=linux" alt="KernelSU" />
-</a>
+![Version](https://img.shields.io/badge/Versión-v2.0_Stable-blue?style=for-the-badge&logo=android)
+[![Magisk](https://img.shields.io/badge/Magisk-v20.4+-00AF9C?style=for-the-badge&logo=magisk)](https://github.com/topjohnwu/Magisk)
+[![KernelSU](https://img.shields.io/badge/KernelSU-Compatible-blueviolet?style=for-the-badge&logo=linux)](https://github.com/tiann/KernelSU)
 
-<br><br>
+![Version](https://img.shields.io/badge/Versión-v2.0_Stable-blue?style=for-the-badge&logo=android) [![Magisk](https://img.shields.io/badge/Magisk-v20.4+-00AF9C?style=for-the-badge&logo=magisk)](https://github.com/topjohnwu/Magisk) [![KernelSU](https://img.shields.io/badge/KernelSU-Compatible-blueviolet?style=for-the-badge&logo=linux)](https://github.com/tiann/KernelSU)
 
-<a href="https://github.com/LuferOS/dexoat-Magisk-kernelsu/releases/latest">
-  <img src="https://img.shields.io/badge/DESCARGAR_AHORA-black?style=for-the-badge&logo=github&logoColor=white" alt="Descargar Ahora" />
-</a>
+[![Descargar Ahora](https://img.shields.io/github/downloads/LuferOS/dexoatMagisk/total?label=DESCARGAR%20AHORA&style=for-the-badge&color=orange&logo=github&logoColor=white)](https://github.com/LuferOS/dexoatMagisk/releases/latest)
 
-</div>
 
 ---
 ## 🧐 ¿Qué hace esta bestia?
