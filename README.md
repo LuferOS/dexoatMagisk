@@ -1,15 +1,14 @@
 # 🚀 DEX2OAT OPTIMIZATION BOOST (LuferOS)
+
 <div align="center">
 
 ![Version](https://img.shields.io/badge/Versión-v2.0_Stable-blue?style=for-the-badge&logo=android)
-![Size](https://img.shields.io/badge/Tamaño-Ultra_Ligero-cyan?style=for-the-badge)
-![Status](https://img.shields.io/badge/Estado-Activo-success?style=for-the-badge)
 [![Magisk](https://img.shields.io/badge/Magisk-v20.4+-00AF9C?style=for-the-badge&logo=magisk)](https://github.com/topjohnwu/Magisk)
 [![KernelSU](https://img.shields.io/badge/KernelSU-Compatible-blueviolet?style=for-the-badge&logo=linux)](https://github.com/tiann/KernelSU)
 
-**Inyección de rendimiento AOT a nivel Kernel. Cero Lag. Máxima eficiencia térmica.**
 <br>
-Desarrollado por [LuferOS](https://github.com/LuferOS)
+[![Download Now](https://img.shields.io/badge/¡DESCARGAR_AHORA!-black?style=for-the-badge&logo=github&logoColor=white)](https://github.com/LuferOS/dexopt-boost-magisk/releases/latest)
+
 </div>
 
 ---
