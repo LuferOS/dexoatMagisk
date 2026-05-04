@@ -7,7 +7,7 @@
 [![KernelSU](https://img.shields.io/badge/KernelSU-Compatible-blueviolet?style=for-the-badge&logo=linux)](https://github.com/tiann/KernelSU)
 
 <br>
-[![Download Now](https://img.shields.io/badge/¡DESCARGAR_AHORA!-black?style=for-the-badge&logo=github&logoColor=white)](https://github.com/LuferOS/dexopt-boost-magisk/releases/latest)
+[![Download Now](https://img.shields.io/badge/¡DESCARGAR_AHORA!-black?style=for-the-badge&logo=github&logoColor=white)](https://github.com/LuferOS/dexoat-Magisk-kernelsu/releases/latest)
 
 </div>
 
