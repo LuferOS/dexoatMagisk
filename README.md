@@ -1,14 +1,17 @@
 # 🚀 DEX2OAT OPTIMIZATION BOOST (LuferOS)
 <div align="center">
-[![Downloads](https://img.shields.io/github/downloads/LuferOS/dexopt-boost-magisk/total?style=for-the-badge&color=cyan&logo=github)](https://github.com/LuferOS/dexopt-boost-magisk/releases)
-[![Stars](https://img.shields.io/github/stars/LuferOS/dexopt-boost-magisk?style=for-the-badge&color=yellow&logo=github)](https://github.com/LuferOS/dexopt-boost-magisk/stargazers)
-[![Release](https://img.shields.io/github/v/release/LuferOS/dexopt-boost-magisk?style=for-the-badge&color=blue&logo=android)](https://github.com/LuferOS/dexopt-boost-magisk/releases)
+
+![Version](https://img.shields.io/badge/Versión-v2.0_Stable-blue?style=for-the-badge&logo=android)
+![Size](https://img.shields.io/badge/Tamaño-Ultra_Ligero-cyan?style=for-the-badge)
+![Status](https://img.shields.io/badge/Estado-Activo-success?style=for-the-badge)
 [![Magisk](https://img.shields.io/badge/Magisk-v20.4+-00AF9C?style=for-the-badge&logo=magisk)](https://github.com/topjohnwu/Magisk)
 [![KernelSU](https://img.shields.io/badge/KernelSU-Compatible-blueviolet?style=for-the-badge&logo=linux)](https://github.com/tiann/KernelSU)
+
 **Inyección de rendimiento AOT a nivel Kernel. Cero Lag. Máxima eficiencia térmica.**
 <br>
 Desarrollado por [LuferOS](https://github.com/LuferOS)
 </div>
+
 ---
 ## 🧐 ¿Qué hace esta bestia?
 **Dex2OAT Optimization Boost** no es el típico script destructivo que compila todo a lo bruto y deja tu dispositivo congelado. Este módulo actúa como un disparador inteligente de optimización post-arranque.
